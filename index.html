@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roblox — Condo games</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Poppins:wght@400;500;600&display=swap');
+
+  :root {
+  --deep-sea: #1a0000;
+  --sea-mid: #3d0a0a;
+  --gold: #f2b84b;
+  --gold-soft: #f7d38a;
+  --foam: #e6f4f9;
+}
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255,60,60,0.10), transparent 60%),
+    linear-gradient(180deg, #000000 0%, #3d0a0a 45%, #000000 100%);
+  font-family: 'Poppins', sans-serif;
+  color: var(--foam);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+  /* subtle wave lines in background */
+  .wave-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.15;
+    background-image: repeating-linear-gradient(
+      transparent, transparent 78px,
+      rgba(242,184,75,0.4) 79px, transparent 80px
+    );
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 560px;
+    text-align: center;
+  }
+
+  .eyebrow {
+    letter-spacing: 4px;
+    font-size: 12px;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    opacity: 0.85;
+  }
+
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-weight: 800;
+    font-size: clamp(32px, 6vw, 48px);
+    color: var(--gold);
+    text-shadow: 0 0 24px rgba(242,184,75,0.35);
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    color: var(--foam);
+    opacity: 0.7;
+    font-size: 15px;
+    margin-bottom: 48px;
+  }
+
+  .servers {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .server-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    border: 1px solid rgba(242,184,75,0.25);
+    border-radius: 14px;
+    padding: 22px 28px;
+    text-decoration: none;
+    color: var(--foam);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .server-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(242,184,75,0.12), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .server-card:hover::before { left: 100%; }
+
+  .server-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(242,184,75,0.15);
+  }
+
+  .server-info { display: flex; align-items: center; gap: 16px; text-align: left; }
+
+  .server-number {
+    font-family: 'Cinzel', serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--deep-sea);
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .server-icon {
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid rgba(242,184,75,0.4);
+  }
+
+  .server-name {
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--foam);
+  }
+
+  .server-status {
+    font-size: 12px;
+    color: #7fe0a8;
+    opacity: 0.85;
+  }
+
+  .arrow {
+    font-size: 18px;
+    color: var(--gold);
+    opacity: 0.7;
+    transition: transform 0.25s ease;
+  }
+
+  .server-card:hover .arrow { transform: translateX(4px); opacity: 1; }
+
+  footer {
+    margin-top: 50px;
+    font-size: 12px;
+    color: var(--foam);
+    opacity: 0.35;
+  }
+</style>
+</head>
+<body>
+
+<div class="wave-bg"></div>
+
+<div class="container">
+  <div class="eyebrow">Grand Line Access</div>
+  <h1>Condo Games</h1>
+  <p class="subtitle">Choose game to join</p>
+
+  <div class="servers">
+    <a href="https://roblox.com.bz/games/136609432705944/Bubble-Battles?privateServerLinkCode=32184097231327556557626064476243" class="server-card" target="_blank" rel="noopener">
+      <div class="server-info">
+        <img src="https://i.ibb.co.com/60qQM5Qn/IMG-20260710-WA0115.jpg" alt="Condo games 1" class="server-icon">
+        <div>
+          <div class="server-name">Condo games 1</div>
+          <div class="server-status">● Online</div>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a href="https://roblox.com.bz/games/108026644740814/Keki-Cutecore-House?privateServerLinkCode=32184097231327556557626064476243" class="server-card" target="_blank" rel="noopener">
+      <div class="server-info">
+        <img src="https://i.ibb.co.com/6cFvx4zh/IMG-20260710-WA0116.jpg" alt="Condo games 2" class="server-icon">
+        <div>
+          <div class="server-name">Condo games 2</div>
+          <div class="server-status">● Online</div>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a href="https://roblox.com.bz/games/16156657915/meozi-kawaii-town?privateServerLinkCode=32184097231327556557626064476243" class="server-card" target="_blank" rel="noopener">
+      <div class="server-info">
+        <img src="https://i.ibb.co.com/XxF99X4K/IMG-20260710-WA0117.jpg" alt="Condo games 3" class="server-icon">
+        <div>
+          <div class="server-name">Condo games 3</div>
+          <div class="server-status">● Online</div>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+  </div>
+
+  <footer>Join the games and enjoy</footer>
+</div>
+
+</body>
+</html>
